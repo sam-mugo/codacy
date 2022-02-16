@@ -6,7 +6,7 @@ from .models import Tutorial, Category
 def index(request):
     return render(request, 'space/index.html')
 
-def bul(request):
+def index(request):
     tuts = Tutorial.objects.all()
-    return render(request, 'space/bul.html', {'tuts': tuts})
+    return render(request, 'space/index.html', {'tuts': tuts})
 
