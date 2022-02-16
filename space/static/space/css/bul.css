@@ -1,0 +1,78 @@
+body {
+    width: 100%;
+}
+h1.titled {
+    font-size: 7rem;
+}
+
+img {
+    width: 400;
+    height: 400;
+}
+.fa-graduation-cap {
+    font-size: 5rem;
+    color: #f7c32e;
+}
+.fa-desktop {
+    font-size: 5rem;
+    color: #1d3b53;
+}
+.fa-user {
+    font-size: 5rem;
+    color: #6f42c1;
+}
+.fa-arrow-up, .fa-arrow-down {
+    font-size: 10px;
+}
+.typed {
+    color: #00947e;
+}
+
+#datatable {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #00947e;
+    background-image: linear-gradient(to right, #c2e5e6, #9ae9d3, #94e8a4, #b6df64, #ebcc12);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+thead {
+    
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2%;
+}
+th, td {
+    border: 1px solid rgb(211, 243, 243);
+}
+thead th:nth-child(1) {
+    width: 10%;
+}
+  
+thead th:nth-child(2) {
+    width: 30%;
+}
+  
+thead th:nth-child(3) {
+    width: 10%;
+}
+  
+thead th:nth-child(4) {
+    width: 10%;
+}
+thead th:nth-child(5) {
+    width: 10%;
+}
+thead th:nth-child(6) {
+    width: 10%;
+}
+thead th:nth-child(7) {
+    width: 10%;
+}
+  
+th, td {
+    padding: 20px;
+  
+}
+

@@ -1,0 +1,289 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+          background-image: url("{% static 'space/images/bg.svg' %}") no-repeat fixed;
+        }
+    </style>
+    <section class="hero is-white is-fullheight">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="/">
+                            <h1>Codacy_Kenya</h1>
+                        </a>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <li class=""><a href="/">Home</a></li>
+                                    <li><a href="">Blog</a></li>
+                                    <li><a href="">login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+          <div class="container">
+            <div class="columns  is-vcentered">
+              
+              <div data-aos="fade-down" class="column
+              is-10-mobile is-offset-1-mobile
+              is-10-tablet is-offset-1-tablet
+              is-5-desktop is-offset-1-desktop
+              is-5-widescreen is-offset-1-widescreen
+              is-5-fullhd is-offset-1-fullhd">
+                <h1 class="titled title is-1 mb-6">
+                  For the self taught kenyan developer.
+                </h1>
+                <h2 class="subtitled subtitle">
+                  A curated database of the best free programming tutorials on the internet.
+                </h2>
+              </div>
+              <div data-aos="fade-left" class="column
+              is-10-mobile is-offset-1-mobile
+              is-10-tablet is-offset-1-tablet
+              is-4-desktop is-offset-1-desktop
+              is-4-widescreen is-offset-1-widescreen
+              is-4-fullhd is-offset-1-fullhd">
+                <figure class="image is-400x400">
+                    <img src="{% static 'space/images/hero.png' %}" alt="">
+                  
+                </figure>
+              </div>
+    
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="info-tiles">
+        <div class="columns is-mobile is-centered has-text-centered">
+            <div class="column is-7 is-justify-content-center">
+                <div class="tile is-ancestor has-text-centered">
+                    <div class="tile is-parent">
+                        <article class="columns is-vcentered is-justify-content-center tile is-child box" style="background: #e4d6b0;">
+                            <i class="fa fa-graduation-cap mx-4" aria-hidden="true"></i>
+                            <div class="inner-content">
+                                <p class="title">1</p>
+                                <p class="subtitle">Users</p>
+                            </div>
+                            
+                        </article>
+                    </div>
+                    <div class="tile is-parent">
+                        <article class="columns is-vcentered is-justify-content-center tile is-child box" style="background-color: #778ea0;">
+                            <i class="fa fa-desktop mx-4" aria-hidden="true"></i>
+                            <div class="inner-content">
+                                <p class="title">10</p>
+                                <p class="subtitle">Tutorials</p>
+
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                    <div class="tile is-parent">
+                        <article class="columns is-vcentered is-justify-content-center tile is-child box" style="background: #ae99d4;">
+                            <i class="fa fa-user mx-4" aria-hidden="true"></i>
+                            <div class="inner-content">
+                                <p class="title">3.4k</p>
+                                <p class="subtitle">Cotributors</p>
+
+                            </div>
+                            
+                        </article>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        
+            <div class="columns is-mobile is-centered has-text-centered">
+                <div class="column is-7">
+                <div>
+                    <h1 class="title mt-4">Learn Something new!</h1>
+                    <h1 class="typed"><strong style="color: #00947e;">For the <span id="typewriter"></span> developer.</strong> </h1>
+                    <hr>
+                </div>
+                
+            
+
+            
+        </div>
+    </section>    
+    <section>
+        <div class="columns is-mobile is-centered">
+            <div class="column is-8 is-justify-content-center">
+                <div class="box content">
+                    {% for tut in tuts %}
+                        <article class="mb-1 box">
+                            <h4>{{ tut.tut_name }}</h4>
+                            <div class="media">
+                                <div class="media-left">
+                                    <p class="image is-32x32">
+                                        <img src="http://bulma.io/images/placeholders/128x128.png">
+                                    </p>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <a href="#">{{ tut.tut_difficulty }}</a> | {{ tut.tut_time }} &nbsp;
+                                            <span class="tag">{{ tut.tut_tag }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-right">
+                                    <span class="has-text-grey-light">4<i class="fa fa-arrow-up mx-1" aria-hidden="true"></i><i class="fa fa-arrow-down mx-1" aria-hidden="true"></i>2</span>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                    
+                    
+                   
+                </div>
+            </div>
+    </section> 
+    <section>    
+        <div class="container">
+            <div class="columns  is-vcentered">
+                <div data-aos="fade-left" class="column
+                is-10-mobile is-offset-1-mobile
+                is-10-tablet is-offset-1-tablet
+                is-4-desktop is-offset-1-desktop
+                is-4-widescreen is-offset-1-widescreen
+                is-4-fullhd is-offset-1-fullhd">
+                    <figure class="image is-400x400">
+                        <img src="{% static 'space/images/teaching2.svg' %}" alt="">
+                    
+                    </figure>
+                </div>
+                <div data-aos="fade-down" class="column
+                is-10-mobile is-offset-1-mobile
+                is-10-tablet is-offset-1-tablet
+                is-5-desktop is-offset-1-desktop
+                is-5-widescreen is-offset-1-widescreen
+                is-5-fullhd is-offset-1-fullhd">
+                    <h1 class="titled title is-1 mb-6">
+                    For the self taught kenyan developer.
+                    </h1>
+                    <h2 class="subtitled subtitle">
+                    A curated database of the best free programming tutorials on the internet.
+                    </h2>
+                </div>
+                
+    
+            </div>
+        </div>
+    </div>
+</section> 
+<section id="founderfeed" class="section">
+    <div class="container">
+        <div class="columns is-mobile is-centered">
+            <div class="column is-6 is-justify-content-center">
+                <div class="box">
+                    <article class="media">
+                        <div class="media-left">
+                            <figure class="image is-64x64">
+                                <img class="is-rounded" src="{% static 'space/images/fond.png'%}">
+                            </figure>
+                        </div>
+                        <div class="media-content">
+                            <div class="content">
+                                <p>
+                                    <strong>Founder</strong> <small>@mugo</small>
+                                    <br>
+                                    Codacy plan is to create the best and biggest programming and software Engineering forum in kenya. Thanks for being here in the early stages.
+                                </p>
+                            </div>
+                        </div>
+
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
+        
+<footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <div class="soc">
+          <a href="https://github.com/sam-mugo" target="_blank"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
+          
+          
+          <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+        </div>
+        <p>
+          <strong>Codacy_kenya</strong> by <a href="https://github.com/sam-mugo" target="_blank">Mugo</a>.
+        </p>
+      </div>
+    </div>
+  </footer>  
+        
+    
+        
+
+    
+
+      <style>
+        .hero {
+          background-image: url("{% static 'space/images/bg.svg' %}");
+        }
+      </style>
+      <link rel="stylesheet" href="{% static 'space/css/bul.css' %}">
+
+    
+    <script>
+        (function() {
+            var burger = document.querySelector('.burger');
+            var menu = document.querySelector('#'+burger.dataset.target);
+            burger.addEventListener('click', function() {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+        })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
+    <script>
+      new Typewriter('#typewriter', {
+        strings: ['Beginner', 'Intermediate', 'Pro',],
+        autoStart: true,
+        loop: true,
+      });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        once: true
+      });
+    </script>
+    
+</body>
+</html>
