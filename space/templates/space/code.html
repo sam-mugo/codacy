@@ -1,0 +1,59 @@
+{% extends 'space/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+
+
+<body>
+    {% block content %}
+    <section>
+        <div class="columns is-mobile is-centered">
+            <div class="column is-8 is-justify-content-center">
+                <div class="code-intro">
+                    <h1>Code Bookmarks</h1>
+                    
+                </div>
+
+                <div class="box content">
+                    {% for tut in tuts %}
+                        <article class="mb-1 box">
+                            <h4>{{ tut.tut_name }}</h4>
+                            <div class="media">
+                                <div class="media-left">
+                                    <p class="image is-32x32">
+                                        <img src="http://bulma.io/images/placeholders/128x128.png">
+                                    </p>
+                                </div>
+                                <div class="media-content">
+                                    <div class="content">
+                                        <p>
+                                            <a href="#">{{ tut.tut_difficulty }}</a> | {{ tut.tut_time }} &nbsp;
+                                            <span class="tag">{{ tut.tut_tag }}</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="media-right">
+                                    <span class="has-text-grey-light">4<i class="fa fa-arrow-up mx-1" aria-hidden="true"></i><i class="fa fa-arrow-down mx-1" aria-hidden="true"></i>2</span>
+                                </div>
+                            </div>
+                        </article>
+                    {% endfor %}
+                    
+                    
+                   
+                </div>
+            </div>
+    </section> 
+<link rel="stylesheet" href="{% static 'space/css/code.css' %}">
+{% endblock content%}
+  
+</body>
+
+</html>
