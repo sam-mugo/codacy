@@ -1,52 +1,13 @@
+{% extends 'space/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css" />
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
-    <title>Document</title>
-</head>
+<html>
 <body>
+    {% block content %}
     <style>
         body {
           background-image: url("{% static 'space/images/bg.svg' %}") no-repeat fixed;
         }
     </style>
-    <section class="hero is-white is-fullheight">
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="/">
-                            <h1>Codacy_Kenya</h1>
-                        </a>
-                        <span class="navbar-burger burger" data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <div class="tabs is-right">
-                                <ul>
-                                    <li class=""><a href="/">Home</a></li>
-                                    <li><a href="">Blog</a></li>
-                                    <li><a href="">login</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </div>
         <div class="hero-body">
           <div class="container">
             <div class="columns  is-vcentered">
@@ -229,61 +190,22 @@
             </div>
         </div>
     </div>
-</section>    
+</section>
+<style>
+    .hero {
+      background-image: url("{% static 'space/images/bg.svg' %}");
+    }
+  </style>    
         
-<footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <div class="soc">
-          <a href="https://github.com/sam-mugo" target="_blank"><i class="fa fa-github-alt fa-lg" aria-hidden="true"></i></a>
-          
-          
-          <a href="#"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
-        </div>
-        <p>
-          <strong>Codacy_kenya</strong> by <a href="https://github.com/sam-mugo" target="_blank">Mugo</a>.
-        </p>
-      </div>
-    </div>
-  </footer>  
-        
-    
-        
-
-    
-
-      <style>
-        .hero {
-          background-image: url("{% static 'space/images/bg.svg' %}");
-        }
-      </style>
-      <link rel="stylesheet" href="{% static 'space/css/bul.css' %}">
-
-    
-    <script>
-        (function() {
-            var burger = document.querySelector('.burger');
-            var menu = document.querySelector('#'+burger.dataset.target);
-            burger.addEventListener('click', function() {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-            });
-        })();
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.13.1/core.min.js"></script>
-    <script>
-      new Typewriter('#typewriter', {
-        strings: ['Beginner', 'Intermediate', 'Pro',],
-        autoStart: true,
-        loop: true,
-      });
-    </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true
-      });
-    </script>
-    
+<link rel="stylesheet" href="{% static 'space/css/bul.css' %}">
 </body>
+{% endblock %}
 </html>
+        
+    
+        
+
+    
+
+     
+    
