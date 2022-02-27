@@ -22,9 +22,9 @@
                 </div>
 
                 <div class="box content">
-                    {% for tut in tuts %}
+                    {% for cod in code %}
                         <article class="mb-1 box">
-                            <h4>{{ tut.tut_name }}</h4>
+                            <h4>{{ cod.tut_name }}</h4>
                             <div class="media">
                                 <div class="media-left">
                                     <p class="image is-32x32">
@@ -34,8 +34,8 @@
                                 <div class="media-content">
                                     <div class="content">
                                         <p>
-                                            <a href="#">{{ tut.tut_difficulty }}</a> | {{ tut.tut_time }} &nbsp;
-                                            <span class="tag">{{ tut.tut_tag }}</span>
+                                            <a href="#">{{ cod.tut_difficulty }}</a> | {{ cod.tut_time }} &nbsp;
+                                            <span class="tag">{{ cod.tut_tag }}</span>
                                         </p>
                                     </div>
                                 </div>
@@ -51,7 +51,7 @@
                 </div>
             </div>
     </section> 
-<link rel="stylesheet" href="{% static 'space/css/code.css' %}">
+<link rel="stylesheet" href="{% static 'space/css/tuts.css' %}">
 {% endblock content%}
   
 </body>

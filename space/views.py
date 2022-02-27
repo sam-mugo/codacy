@@ -10,9 +10,10 @@ def index(request):
     return render(request, 'space/index.html', {'tuts': tuts})
 
 
-def code(request):
-    tuts = Tutorial.objects.all()
-    return render(request, 'space/code.html', {'tuts': tuts})
+def tut(request):
+    code = Tutorial.objects.all()
+    return render(request, 'space/code.html', {'code': code})
+
 
 
 # def search(request):
