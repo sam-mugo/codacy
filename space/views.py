@@ -6,13 +6,13 @@ from .models import Tutorial, Category
 
 
 def index(request):
-    tuts = Tutorial.objects.all()
-    return render(request, 'space/index.html', {'tuts': tuts})
+    all_tuts = Tutorial.objects.all()
+    return render(request, 'space/index.html', {'all_tuts': all_tuts})
 
 
 def tut(request):
-    code = Tutorial.objects.all()
-    return render(request, 'space/code.html', {'code': code})
+    tuts = Tutorial.objects.all()
+    return render(request, 'space/tuts.html', {'tuts': tuts})
 
 
 
