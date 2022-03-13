@@ -21,9 +21,12 @@
                     
                 </div>
 
+                
+
                 <div class="box content">
                     {% for tut in tuts %}
                         <article class="mb-1 box">
+                            <div class="tagfilter button">{{ tut.tut_tag }}</div>
                             <h4>{{ tut.tut_name }}</h4>
                             <div class="media">
                                 <div class="media-left">
