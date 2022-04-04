@@ -1,6 +1,9 @@
 from django.db.models import Q
 from django.shortcuts import get_object_or_404, render
-from .models import Tutorial, Category
+from rest_framework.generics import ListAPIView
+from .models import Tutorial
+from .serializers import TutorialSerializer
+from taggit.models import Tag
 
 # Create your views here.
 
@@ -10,9 +13,16 @@ def index(request):
     return render(request, 'space/index.html', {'all_tuts': all_tuts})
 
 
-def tut(request):
+def tuts(request):
     tuts = Tutorial.objects.all()
-    return render(request, 'space/tuts.html', {'tuts': tuts})
+    tags = Tag.objects.all()
+    context = {'tuts': tuts, 'tags': tags}
+    return render(request, 'space/tuts.html', context)
+
+
+class TutorialListAPIView(ListAPIView):
+    queryset = Tutorial.objects.all()
+    serializer_class = TutorialSerializer
 
 
 

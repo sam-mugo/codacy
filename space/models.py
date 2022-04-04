@@ -1,15 +1,7 @@
 from django.db import models
+from taggit.managers import TaggableManager
 
 # Create your models here.
-class Category(models.Model):
-    name = models.CharField(max_length=50)
-    
-    class Meta:
-        ordering = ('name',)
-        verbose_name_plural = 'Categories'
-        
-    def __str__(self):
-        return self.name
 
 class Tutorial(models.Model):
     WRITTEN = 'written'
@@ -30,14 +22,15 @@ class Tutorial(models.Model):
         
     )
     
-    category = models.ForeignKey(Category, related_name='tutorials', on_delete=models.CASCADE)
-    tut_name = models.CharField(max_length=200)
-    tut_link = models.CharField(max_length=200)
+   
+    name = models.CharField(max_length=200)
+    tags = TaggableManager()
+    url = models.CharField(max_length=200)
     tut_format = models.CharField(max_length=20, choices=TUT_FORMAT, default=WRITTEN)
-    tut_tag = models.CharField(max_length=200)
+    
     tut_updated = models.DateField()
-    tut_difficulty = models.CharField(max_length=20, choices=TUT_DIFFICULTY, default=BEGINNER)
-    tut_time = models.CharField(max_length=10)
+    difficulty = models.CharField(max_length=20, choices=TUT_DIFFICULTY, default=BEGINNER)
+    time = models.CharField(max_length=10)
     created_at = models.DateTimeField(auto_now_add=True)
     
     class Meta:
@@ -45,4 +38,4 @@ class Tutorial(models.Model):
         verbose_name_plural = 'Tutorials'
         
     def __str__(self):
-        return self.tut_name
+        return self.name

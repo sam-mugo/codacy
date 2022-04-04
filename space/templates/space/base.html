@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.3/css/bulma.min.css" />
+    
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="{% static 'space/css/style.css' %}">
+    <script defer src="https://unpkg.com/alpinejs@3.9.5/dist/cdn.min.js"></script>
+    
     
     <title>codacy_</title>
 </head>
@@ -36,7 +39,7 @@
                             <ul>
                                 <li class=""><a href="/">Home</a></li>
                                 <li><a href="">Blog</a></li>
-                                <li><a href="">login</a></li>
+                                <li><a href="{% url 'tuts' %}">Tuts</a></li>
                             </ul>
                         </div>
                     </div>
@@ -84,6 +87,7 @@
   });
 </script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 <script>
   AOS.init({
     once: true

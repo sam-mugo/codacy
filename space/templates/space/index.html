@@ -104,7 +104,7 @@
                 <div class="box content">
                     {% for tut in all_tuts %}
                         <article class="mb-1 box">
-                            <h4>{{ tut.tut_name }}</h4>
+                            <h4>{{ tut.name }}</h4>
                             <div class="media">
                                 <div class="media-left">
                                     <p class="image is-32x32">
@@ -114,8 +114,10 @@
                                 <div class="media-content">
                                     <div class="content">
                                         <p>
-                                            <a href="#">{{ tut.tut_difficulty }}</a> | {{ tut.tut_time }} &nbsp;
-                                            <span class="tag">{{ tut.tut_tag }}</span>
+                                            <a href="#">{{ tut.difficulty }}</a> | {{ tut.time }} &nbsp;
+                                            {% for tag in tut.tags.names %}
+                                                <span class="tag">{{ tag }}</span>
+                                            {% endfor %}
                                         </p>
                                     </div>
                                 </div>
