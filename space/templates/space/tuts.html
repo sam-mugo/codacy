@@ -43,7 +43,7 @@
                     <template x-for="tut in tuts.filter(t => tag === 'All' || t.tags.includes(tag))">
                     
                         <article class="mb-1 box">
-                                <h4 x-text="tut.name">name</h4>
+                                <a x-bind:href="tut.url" x-text="tut.name">name</a>
                                 <div class="media">
                                     <div class="media-left">
                                         <p class="image is-32x32">
