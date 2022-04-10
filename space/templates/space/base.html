@@ -40,7 +40,11 @@
                                 <li class=""><a href="/">Home</a></li>
                                 <li><a href="">Blog</a></li>
                                 <li><a href="{% url 'tuts' %}">Tuts</a></li>
-                                <!-- <li><a href="{% url 'account_login' %}">Login</a></li>-->
+                                {% if user.is_authenticated %}
+                                  <li><a href="{% url 'account_logout' %}">Logout</a></li>
+                                {% else %}
+                                  <li><a href="{% url 'account_login' %}">Login</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
