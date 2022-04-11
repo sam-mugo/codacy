@@ -11,6 +11,7 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+<body>
 <section class="vh-100">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center  h-100">
@@ -18,13 +19,13 @@
         <div class="card shadow-2-strong" style="border-radius: 1rem;">
           <div class="card-body p-5 ">
 
-            <h1>{% trans "Welcome Back!" %}</h1>
+            <h2>Welcome Back!</h2>
 
             {% get_providers as socialaccount_providers %}
 
             {% if socialaccount_providers %}
-            <p>{% blocktrans with site.name as site_name %}Please sign in with one
-            of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a>
+            <p>{% blocktrans with site.name as site_name %}Please sign in with
+            your existing codacy account. Or, <a href="{{ signup_url }}">sign up</a>
             for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
 
             <div class="socialaccount_ballot">
@@ -62,6 +63,13 @@
       </div>
     </div>
   </section
+
+<style>
+  body {
+    background-image: url("{% static 'space/images/teaching.svg' %}") no-repeat fixed;
+  }
+</style>
+</body>
   
  
 
