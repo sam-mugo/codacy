@@ -9,7 +9,7 @@ from taggit.models import Tag
 
 
 def index(request):
-    all_tuts = Tutorial.objects.all()
+    all_tuts = Tutorial.objects.all()[0:3]
     return render(request, 'space/index.html', {'all_tuts': all_tuts})
 
 
