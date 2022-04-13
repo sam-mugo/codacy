@@ -1,3 +1,7 @@
+article:hover {
+    transform: scale(0.54);
+}
+
 .footer {
     background-color: #f1f6ff;
 }

@@ -8,82 +8,85 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     
+    
     <title>Document</title>
 </head>
 
 
 <body>
     {% block content %}
-    <section>
-    <div 
-    x-data="{tag: 'All', tuts: []}"
-    x-init = "tuts = await (await fetch('/tut-list')).json()">
-        <div class="columns is-mobile is-centered">
-            <div class="column is-8 is-justify-content-center">
-                <div class="code-intro">
-                    <h1>Code Bookmarks</h1>
-                    
-                </div>
-                <div class="tagfilter">
-                    {% for tag in tags %}
+    <section class="is-fullheight">
+        
+        <div 
+        x-data="{tag: 'All', tuts: []}"
+        x-init = "tuts = await (await fetch('/tut-list')).json()">
+            <div class="columns is-mobile is-centered">
+                <div class="column is-10 is-justify-content-center">
+                    <div class="code-intro">
+                        <h1>Code Bookmarks</h1>
+                        
+                    </div>
+                    <div class="tagfilter">
+                        {% for tag in tags %}
+                            <button class="button"
+                            @click="tag = $el.textContent"
+                            :class="tag === $el.textContent ? 'has-background-success' : 'has-background-white'">{{ tag }}</button>
+                            
+                        {% endfor %}
                         <button class="button"
-                        @click="tag = $el.textContent"
-                        :class="tag === $el.textContent ? 'has-background-success' : 'has-background-white'">{{ tag }}</button>
-                        
-                    {% endfor %}
-                    <button class="button"
-                        @click="tag = $el.textContent"
-                        :class="tag === $el.textContent ? 'has-background-success' : 'has-background-white'">All</button>
-                        
-                </div>
+                            @click="tag = $el.textContent"
+                            :class="tag === $el.textContent ? 'has-background-success' : 'has-background-white'">All</button>
+                            
+                    </div>
 
-                
-
-                <div class="box content">
-                    <template x-for="tut in tuts.filter(t => tag === 'All' || t.tags.includes(tag))">
                     
-                        <article class="mb-1 box">
-                                <a x-bind:href="tut.url" x-text="tut.name">name</a>
-                                <div class="media">
-                                    <div class="media-left">
-                                        <p class="image is-32x32">
-                                            <img src="http://bulma.io/images/placeholders/128x128.png">
-                                        </p>
-                                    </div>
-                                    <div class="media-content">
-                                        <div class="content">
-                                            <p>
-                                                <a href="#" x-text="tut.difficulty" | x-text="tut.time"></a>  &nbsp;
-                                                <template x-for = "tag in tut.tags">
-                                                    <span class="tag mx-1" x-text="tag"></span>
 
-                                                </template>
-                                                    
-                                                
+                    <div class="box content">
+                        <template x-for="tut in tuts.filter(t => tag === 'All' || t.tags.includes(tag))">
+                        
+                            <article class="mb-1 box">
+                                    <a x-bind:href="tut.url" x-text="tut.name">name</a>
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <p class="image is-32x32">
+                                                <img src="http://bulma.io/images/placeholders/128x128.png">
                                             </p>
                                         </div>
-                                    </div>
-                                    <div class="media-right">
-                                        <span class="has-text-grey-light">4<i class="fa fa-arrow-up mx-1" aria-hidden="true"></i><i class="fa fa-arrow-down mx-1" aria-hidden="true"></i>2</span>
-                                    </div>
-                                </div>
-                            </template>
+                                        <div class="media-content">
+                                            <div class="content">
+                                                <p>
+                                                    <a href="#" x-text="tut.difficulty" | x-text="tut.time"></a>  &nbsp;
+                                                    <template x-for = "tag in tut.tags">
+                                                        <span class="tag mx-1" x-text="tag"></span>
 
-                        </article>
-                    </template>
-                
-                    
-                    
+                                                    </template>
+                                                        
+                                                    
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="media-right">
+                                            <span class="has-text-grey-light">4<i class="fa fa-arrow-up mx-1" aria-hidden="true"></i><i class="fa fa-arrow-down mx-1" aria-hidden="true"></i>2</span>
+                                        </div>
+                                    </div>
+                                </template>
 
-              
+                            </article>
+                        </template>
                     
+                        
+                        
+
                 
+                        
+                    
+                    </div>
                 </div>
             </div>
-        </div>
         
     </section> 
 <link rel="stylesheet" href="{% static 'space/css/tuts.css' %}">
+
 {% endblock content%}
 
   
