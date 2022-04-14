@@ -4,6 +4,9 @@
 
 
 follow the instructions below to clone or download the repo; then
+```
+$ git clone https://github.com/sam-mugo/codacy.git
+```
 
 
 ## create and use a python virtualenv:
@@ -38,7 +41,7 @@ Load http://127.0.0.1:8000/ in your browser.
 
 ## How to contribute
 ```
-1. I am currently in the process of phasing out Bulma-Css for bootstrap4 as this is the version supported by crispy forms.
+1. I am currently in the process of redesigning the UI and phasing out Bulma-Css for Tailwind
 
 2. The accounts system- authentication (login,signup, change-password) are not styled and this is of high priority right now
 
